@@ -30,6 +30,36 @@ const projects = [
   },
 ];
 
+const experience = [
+  {
+    period: "2022 — Present",
+    role: "Senior Front-End Engineer",
+    company: "Independent / Remote",
+    description: "Leading product design and front-end implementation for client projects spanning marketing, SaaS, and digital transformation work.",
+  },
+  {
+    period: "2019 — 2022",
+    role: "Product Designer & Developer",
+    company: "Creative Studio",
+    description: "Partnered with startups and founders to shape product direction, UX flows, and efficient front-end systems.",
+  },
+  {
+    period: "2017 — 2019",
+    role: "Web Developer",
+    company: "Digital Agency",
+    description: "Built and maintained marketing sites and conversion-focused experiences for growth-oriented brands.",
+  },
+];
+
+const services = [
+  "Brand and product strategy",
+  "Web app development",
+  "UI/UX design systems",
+  "Landing pages and funnels",
+  "Performance optimization",
+  "Technical consulting",
+];
+
 const stats = [
   { label: "Years of experience", value: "6+" },
   { label: "Projects shipped", value: "25" },
@@ -127,6 +157,36 @@ export default function Home() {
               >
                 {skill}
               </span>
+            ))}
+          </div>
+        </section>
+
+        <section className="border-t border-slate-800 py-16">
+          <div className="grid gap-10 md:grid-cols-[0.9fr_1.1fr]">
+            <div>
+              <p className="text-sm font-medium uppercase tracking-[0.24em] text-cyan-300">Experience</p>
+              <h2 className="mt-4 text-3xl font-semibold text-white">A track record of thoughtful product work.</h2>
+            </div>
+            <div className="space-y-6">
+              {experience.map((item) => (
+                <div key={item.role} className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
+                  <div className="mb-2 text-xs uppercase tracking-[0.2em] text-cyan-300">{item.period}</div>
+                  <div className="text-xl font-semibold text-white">{item.role}</div>
+                  <div className="mt-1 text-sm text-slate-400">{item.company}</div>
+                  <p className="mt-3 text-sm leading-7 text-slate-300">{item.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="border-t border-slate-800 py-16">
+          <p className="text-sm font-medium uppercase tracking-[0.24em] text-cyan-300">Services</p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map((service) => (
+              <div key={service} className="rounded-2xl border border-slate-800 bg-slate-900 p-5 text-slate-200">
+                {service}
+              </div>
             ))}
           </div>
         </section>
