@@ -4,6 +4,7 @@ import type {
   NavItem,
   Profile,
   Project,
+  SkillGroup,
   SocialLink,
   Stat,
 } from "@/types";
@@ -57,6 +58,21 @@ export const projectHighlights: Stat[] = [
   { label: "Core focus", value: "Frontend" },
   { label: "Current study", value: "BS CS" },
   { label: "Stack", value: "React + TypeScript" },
+];
+
+export const skills: SkillGroup[] = [
+  {
+    title: "Core strengths",
+    items: ["UI/UX thinking", "Responsive design", "Design systems", "Web accessibility"],
+  },
+  {
+    title: "Frontend tools",
+    items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+  },
+  {
+    title: "Workflow",
+    items: ["Figma", "Git", "API integration", "Testing", "Product collaboration"],
+  },
 ];
 
 export const projects: Project[] = [

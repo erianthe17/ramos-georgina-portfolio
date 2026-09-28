@@ -9,10 +9,10 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    "border border-cyan-400/50 bg-cyan-400 text-slate-950 shadow-[0_0_30px_rgba(34,211,238,0.2)] hover:bg-cyan-300",
+    "border border-[var(--accent)]/40 bg-[var(--accent)] text-[var(--accent-contrast)] shadow-[0_14px_34px_var(--shadow)] hover:brightness-110",
   secondary:
-    "border border-slate-700 bg-slate-900/70 text-slate-100 hover:border-slate-500 hover:bg-slate-800",
-  ghost: "border border-transparent bg-transparent text-slate-200 hover:border-slate-700 hover:bg-slate-900/70",
+    "border border-[var(--border)] bg-[var(--card)] text-[var(--foreground)] hover:border-[var(--accent)]/60 hover:text-[var(--accent-strong)]",
+  ghost: "border border-transparent bg-transparent text-[var(--foreground)] hover:border-[var(--border)] hover:bg-[var(--card)]",
 };
 
 export function Button({

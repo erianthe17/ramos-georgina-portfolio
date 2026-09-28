@@ -51,3 +51,8 @@ export interface Stat {
   label: string;
   value: string;
 }
+
+export interface SkillGroup {
+  title: string;
+  items: string[];
+}
