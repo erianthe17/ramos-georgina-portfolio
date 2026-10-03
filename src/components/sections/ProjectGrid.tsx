@@ -7,9 +7,9 @@ import { projects } from "@/lib/constants";
 
 export function ProjectGrid() {
   return (
-    <section id="work" className="py-20">
+    <section id="work" className="project-section py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <Reveal initialVisible className="mb-10 flex items-end justify-between gap-4">
+        <Reveal className="mb-10 flex items-end justify-between gap-4">
           <div>
             <p className="text-xs font-semibold tracking-[0.24em] text-[var(--accent-strong)] uppercase">Featured work</p>
             <h2 className="mt-3 text-3xl font-semibold text-[var(--foreground)] sm:text-4xl">Selected projects</h2>

@@ -18,20 +18,6 @@ export function Reveal({
 }: RevealProps) {
   const ref = useRef<HTMLDivElement | null>(null);
   const [isVisible, setIsVisible] = useState(initialVisible);
-  const [hasScrolled, setHasScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 12) {
-        setHasScrolled(true);
-      }
-    };
-
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   useEffect(() => {
     const node = ref.current;
@@ -40,9 +26,14 @@ export function Reveal({
       return;
     }
 
+    if (!("IntersectionObserver" in window)) {
+      node.classList.add("visible");
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && hasScrolled) {
+        if (entry.isIntersecting) {
           setIsVisible(true);
           observer.disconnect();
         }
@@ -56,7 +47,7 @@ export function Reveal({
     observer.observe(node);
 
     return () => observer.disconnect();
-  }, [hasScrolled, initialVisible]);
+  }, [initialVisible]);
 
   return (
     <div

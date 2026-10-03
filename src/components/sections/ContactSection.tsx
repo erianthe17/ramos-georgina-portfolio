@@ -10,16 +10,16 @@ export function ContactSection() {
           <p className="text-xs font-semibold tracking-[0.24em] text-[var(--accent-strong)] uppercase">Contact</p>
           <h2 className="mt-3 text-3xl font-semibold text-[var(--foreground)] sm:text-4xl">Let&apos;s build thoughtful digital experiences.</h2>
           <div className="mt-6 space-y-4 text-[var(--muted)]">
-            <div className="flex items-center gap-3">
-              <Mail className="h-4 w-4 text-[var(--accent-strong)]" />
-              <a href={`mailto:${profile.email}`} className="transition hover:text-[var(--foreground)]">{profile.email}</a>
+            <div className="flex min-w-0 items-start gap-3">
+              <Mail className="mt-1 h-4 w-4 shrink-0 text-[var(--accent-strong)]" />
+              <a href={`mailto:${profile.email}`} className="min-w-0 break-all transition hover:text-[var(--foreground)]">{profile.email}</a>
             </div>
             <div className="flex items-center gap-3">
-              <Phone className="h-4 w-4 text-[var(--accent-strong)]" />
+              <Phone className="h-4 w-4 shrink-0 text-[var(--accent-strong)]" />
               <a href={`tel:${profile.phone.replace(/\s+/g, "")}`} className="transition hover:text-[var(--foreground)]">{profile.phone}</a>
             </div>
             <div className="flex items-center gap-3">
-              <MapPin className="h-4 w-4 text-[var(--accent-strong)]" />
+              <MapPin className="h-4 w-4 shrink-0 text-[var(--accent-strong)]" />
               <span>{profile.location}</span>
             </div>
           </div>

@@ -1,42 +1,46 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Briefcase, Download, Globe } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+import { ArrowRight, Briefcase, Globe } from "lucide-react";
 import { Reveal } from "@/components/common/Reveal";
-import { Badge } from "@/components/ui/Badge";
-import { profile, projectHighlights, socialLinks } from "@/lib/constants";
+import { profile, socialLinks } from "@/lib/constants";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden pb-14 pt-12 sm:pt-16 lg:pt-20">
-      <div className="absolute inset-x-0 top-0 h-48 bg-[radial-gradient(circle_at_top,_rgba(96,165,250,0.22),transparent_45%)]" />
+    <section className="hero-fade-in-up relative isolate overflow-hidden pb-12 pt-12 sm:pt-16 lg:pt-20">
+      <div className="hero-particles absolute inset-0" aria-hidden="true" />
 
-      <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.2fr_0.8fr] lg:px-8">
-        <Reveal initialVisible>
-          <Badge className="border-[var(--accent)]/40 bg-[var(--accent-soft)] text-[var(--accent-strong)]">
-            Frontend-focused developer
-          </Badge>
+      <div className="relative z-10 mx-auto grid min-h-[34rem] max-w-6xl items-center gap-8 px-4 sm:px-6 md:grid-cols-[1.1fr_0.9fr] lg:px-8">
+        <Reveal initialVisible className="relative z-10 max-w-2xl py-10">
+          <p className="text-xs font-semibold tracking-[0.28em] text-[var(--accent-strong)] uppercase">
+            Frontend developer
+          </p>
 
-          <h1 className="mt-6 max-w-xl text-4xl font-semibold tracking-tight text-[var(--foreground)] sm:text-5xl lg:text-6xl">
-            Building polished digital experiences with a product mindset.
+          <h1 className="mt-5 text-5xl font-semibold leading-[1.08] tracking-tight text-[var(--foreground)] sm:text-6xl lg:text-7xl">
+            Hello,
+            <br />
+            I am <span className="text-[var(--accent-strong)]">{profile.name}</span>
+            <span className="text-[var(--foreground)]">,</span>
+            <br />
+            <span className="text-3xl sm:text-4xl lg:text-5xl">{profile.title}</span>
           </h1>
 
-          <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--muted)] sm:text-lg">
+          <p className="mt-6 max-w-xl text-sm leading-7 text-[var(--muted)] sm:text-base">
             {profile.summary}
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Link
-              href="#work"
-              className="inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-[var(--accent-contrast)] transition hover:brightness-110"
+              href="#contact"
+              className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)]/70 px-5 py-3 text-sm font-semibold text-[var(--foreground)] transition hover:bg-[var(--accent-soft)]"
             >
-              View work
+              Let&apos;s get in touch
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
-              href="#contact"
-              className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--card)] px-5 py-3 text-sm font-semibold text-[var(--foreground)] transition hover:border-[var(--accent)]/60 hover:text-[var(--accent-strong)]"
+              href="#work"
+              className="text-sm font-medium text-[var(--muted)] transition hover:text-[var(--accent-strong)]"
             >
-              Get in touch
+              View my work
             </Link>
           </div>
 
@@ -48,9 +52,10 @@ export function HeroSection() {
                 <a
                   key={link.label}
                   href={link.href}
-                  target={link.href.startsWith("http") ? "_blank" : undefined}
-                  rel={link.href.startsWith("http") ? "noreferrer" : undefined}
-                  className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--card)] px-3 py-2 text-xs font-medium tracking-[0.08em] text-[var(--foreground)] uppercase transition hover:border-[var(--accent)]/60 hover:text-[var(--accent-strong)]"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={link.ariaLabel}
+                  className="inline-flex items-center gap-2 text-xs font-medium text-[var(--muted)] transition hover:text-[var(--accent-strong)]"
                 >
                   <Icon className="h-3.5 w-3.5" />
                   {link.label}
@@ -60,31 +65,21 @@ export function HeroSection() {
           </div>
         </Reveal>
 
-        <Reveal initialVisible delay={100} className="rounded-[28px] border border-[var(--border)] bg-[var(--card)] p-6 shadow-[0_25px_80px_var(--shadow)] backdrop-blur-sm ring-1 ring-white/5">
-          <div className="mb-8 flex items-center justify-between gap-4">
-            <div>
-              <p className="text-sm text-[var(--muted)]">Location</p>
-              <p className="mt-1 text-xl font-semibold text-[var(--foreground)]">{profile.location}</p>
-            </div>
-            <span className="h-3 w-3 rounded-full bg-emerald-400 shadow-[0_0_18px_rgba(74,222,128,0.8)]" />
-          </div>
-
-          <div className="space-y-4">
-            {projectHighlights.map((item, index) => (
-              <Reveal key={item.label} delay={150 + index * 80} className="rounded-2xl border border-[var(--border)] bg-[var(--card-strong)] p-4">
-                <p className="text-2xl font-semibold text-[var(--accent-strong)]">{item.value}</p>
-                <p className="mt-1 text-sm text-[var(--muted)]">{item.label}</p>
-              </Reveal>
-            ))}
-          </div>
-
-          <div className="mt-8 flex items-center gap-3">
-            <Button variant="secondary" className="w-full justify-center">
-              <Download className="h-4 w-4" />
-              Resume
-            </Button>
-          </div>
-        </Reveal>
+        <div className="relative mx-auto flex w-full max-w-[34rem] items-end justify-center self-stretch">
+          <div
+            className="absolute bottom-8 left-1/2 h-[72%] w-[72%] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse,_var(--accent-soft),transparent_70%)] blur-2xl"
+            aria-hidden="true"
+          />
+          <Image
+            src="/georgina-portrait.png"
+            alt={`${profile.name} portrait`}
+            width={520}
+            height={520}
+            priority
+            sizes="(max-width: 768px) 90vw, 42vw"
+            className="relative z-10 max-h-[36rem] w-full object-contain object-bottom drop-shadow-[0_24px_56px_var(--shadow)]"
+          />
+        </div>
       </div>
     </section>
   );
