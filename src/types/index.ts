@@ -11,7 +11,6 @@ export interface SocialLink {
 
 export interface Profile {
   name: string;
-  title: string;
   location: string;
   email: string;
   phone: string;
@@ -29,8 +28,8 @@ export interface Project {
   period: string;
   stack: string[];
   image: string;
-  githubUrl: string;
-  liveUrl: string;
+  githubUrl?: string;
+  liveUrl?: string;
 }
 
 export interface Experience {

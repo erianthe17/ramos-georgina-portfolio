@@ -25,8 +25,6 @@ export function Navbar() {
         </nav>
 
         <div className="ml-auto flex items-center gap-2 sm:gap-3 md:ml-0">
-          <ThemeToggle />
-
           <Link
             href="#contact"
             className="inline-flex items-center gap-1.5 rounded-full border border-[var(--accent)]/50 bg-[var(--accent-soft)] px-3 py-2 text-[10px] font-semibold tracking-[0.12em] text-[var(--accent-strong)] uppercase transition hover:brightness-110 sm:gap-2 sm:px-4 sm:text-xs sm:tracking-[0.16em]"
@@ -34,6 +32,8 @@ export function Navbar() {
             Let&apos;s talk
             <ArrowUpRight className="h-3.5 w-3.5" />
           </Link>
+
+          <ThemeToggle />
         </div>
       </div>
     </header>

@@ -25,7 +25,6 @@ export const navItems: NavItem[] = [
 
 export const profile: Profile = {
   name: "Georgina Ramos",
-  title: "Frontend-focused developer",
   location: "San Antonio, Quezon, Philippines",
   email: "georginaramos0317@gmail.com",
   phone: "+63 949 564 3439",
@@ -80,56 +79,51 @@ export const projects: Project[] = [
     slug: "lgr-auto-supply",
     summary: "Inventory operations dashboard",
     description:
-      "Built an end-to-end inventory management experience for product tracking, stock visibility, and operational workflows using a modern frontend foundation and scalable backend integration.",
+      "An inventory management system for tracking products, monitoring stock levels, and organizing day-to-day auto-supply operations.",
     role: "Full-Stack Developer",
     period: "Mar 2026 - Present",
     stack: ["React", "TypeScript", "Tailwind", "NestJS", "PostgreSQL"],
     image:
       "https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=1200&q=80",
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
   },
   {
     title: "TaskBuddy",
     slug: "taskbuddy",
     summary: "Home services marketplace",
     description:
-      "Designed and developed homeowner-facing flows for service discovery, job posting, application review, and approval workflows with a clear, mobile-friendly experience.",
+      "A home services marketplace where homeowners can find service providers, post jobs, and review applications.",
     role: "Frontend Developer",
-    period: "Jul 2026 - Present",
+    period: "Jul 2026 - Oct 2026",
     stack: ["React Native", "Expo", "TypeScript", "Supabase", "Next.js"],
     image:
       "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
+    githubUrl: "https://github.com/erianthe17/taskbuddy",
   },
   {
     title: "CITE Thesis Management System",
     slug: "cite-thesis-management",
     summary: "Academic workflow system",
     description:
-      "Created a thesis submission workflow with structured forms, inline PDF review, and access-request management to improve administrative operations and student clarity.",
+      "A thesis management system for submitting academic work, reviewing thesis documents, and managing access requests.",
     role: "Frontend Developer",
     period: "Feb 2026 - May 2026",
     stack: ["React", "Vite", "Tailwind", "Supabase"],
     image:
       "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
+    githubUrl: "https://github.com/gncrlatienza-eng/cite-tms-frontend",
+    liveUrl: "https://cite-tms-frontend.vercel.app/",
   },
   {
     title: "AnimoMart",
     slug: "animomart",
     summary: "Campus e-commerce experience",
     description:
-      "Developed key storefront and dashboard screens for a campus marketplace, including wishlist, checkout, profile, and reusable commerce UI components tailored to user needs.",
+      "A campus marketplace for browsing products, managing wishlists, and completing purchases.",
     role: "Frontend Developer",
     period: "2025",
     stack: ["React", "Vite", "JavaScript", "Tailwind", "MongoDB"],
     image:
       "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80",
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
   },
 ];
 

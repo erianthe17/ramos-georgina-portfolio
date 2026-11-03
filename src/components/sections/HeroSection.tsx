@@ -11,17 +11,11 @@ export function HeroSection() {
 
       <div className="relative z-10 mx-auto grid min-h-[34rem] max-w-6xl items-center gap-8 px-4 sm:px-6 md:grid-cols-[1.1fr_0.9fr] lg:px-8">
         <Reveal initialVisible className="relative z-10 max-w-2xl py-10">
-          <p className="text-xs font-semibold tracking-[0.28em] text-[var(--accent-strong)] uppercase">
-            Frontend developer
-          </p>
-
           <h1 className="mt-5 text-5xl font-semibold leading-[1.08] tracking-tight text-[var(--foreground)] sm:text-6xl lg:text-7xl">
             Hello,
             <br />
             I am <span className="text-[var(--accent-strong)]">{profile.name}</span>
             <span className="text-[var(--foreground)]">,</span>
-            <br />
-            <span className="text-3xl sm:text-4xl lg:text-5xl">{profile.title}</span>
           </h1>
 
           <p className="mt-6 max-w-xl text-sm leading-7 text-[var(--muted)] sm:text-base">

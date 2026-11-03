@@ -25,7 +25,7 @@ export function ProjectGrid() {
             <Reveal
               key={project.slug}
               delay={index * 80}
-              className="group overflow-hidden rounded-[28px] border border-[var(--border)] bg-[var(--card)] transition duration-300 hover:-translate-y-1 hover:border-[var(--accent)]/60 hover:shadow-[0_20px_70px_var(--shadow)]"
+              className="group flex h-full flex-col overflow-hidden rounded-[28px] border border-[var(--border)] bg-[var(--card)] transition duration-300 hover:-translate-y-1 hover:border-[var(--accent)]/60 hover:shadow-[0_20px_70px_var(--shadow)]"
             >
               <div className="relative h-56 overflow-hidden border-b border-[var(--border)]">
                 <Image
@@ -37,30 +37,34 @@ export function ProjectGrid() {
                 />
               </div>
 
-              <div className="p-6">
+              <div className="flex flex-1 flex-col p-6">
                 <div className="mb-3 flex items-center justify-between gap-3">
                   <p className="text-[11px] font-medium tracking-[0.18em] text-[var(--accent-strong)] uppercase">
                     {project.period}
                   </p>
                   <div className="flex items-center gap-2">
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={`View ${project.title} on GitHub`}
-                      className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--card-strong)] text-[var(--foreground)] transition hover:border-[var(--accent)]/60 hover:text-[var(--accent-strong)]"
-                    >
-                      <Briefcase className="h-4 w-4" />
-                    </a>
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={`View live demo for ${project.title}`}
-                      className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--card-strong)] text-[var(--foreground)] transition hover:border-[var(--accent)]/60 hover:text-[var(--accent-strong)]"
-                    >
-                      <ArrowUpRight className="h-4 w-4" />
-                    </a>
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`View ${project.title} on GitHub`}
+                        className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--card-strong)] text-[var(--foreground)] transition hover:border-[var(--accent)]/60 hover:text-[var(--accent-strong)]"
+                      >
+                        <Briefcase className="h-4 w-4" />
+                      </a>
+                    )}
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`View live demo for ${project.title}`}
+                        className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--card-strong)] text-[var(--foreground)] transition hover:border-[var(--accent)]/60 hover:text-[var(--accent-strong)]"
+                      >
+                        <ArrowUpRight className="h-4 w-4" />
+                      </a>
+                    )}
                   </div>
                 </div>
 
@@ -68,7 +72,7 @@ export function ProjectGrid() {
                 <h3 className="mt-2 text-2xl font-semibold text-[var(--foreground)]">{project.title}</h3>
                 <p className="mt-3 text-sm leading-7 text-[var(--muted)]">{project.description}</p>
 
-                <div className="mt-5 flex flex-wrap gap-2">
+                <div className="mt-auto flex flex-wrap gap-2 pt-5">
                   {project.stack.map((stack) => (
                     <Badge key={`${project.slug}-${stack}`} className="bg-[var(--card-strong)] text-[10px] tracking-[0.12em]">
                       {stack}
