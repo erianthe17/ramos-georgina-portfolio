@@ -95,9 +95,9 @@ export const projects: Project[] = [
     role: "Frontend Developer",
     period: "Jul 2026 - Oct 2026",
     stack: ["React Native", "Expo", "TypeScript", "Supabase", "Next.js"],
-    image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
+    image: "/taskbuddy-cover.png",
     githubUrl: "https://github.com/erianthe17/taskbuddy",
+    liveUrl: "https://taskbuddy-nine-zeta.vercel.app/",
   },
   {
     title: "CITE Thesis Management System",
@@ -108,8 +108,7 @@ export const projects: Project[] = [
     role: "Frontend Developer",
     period: "Feb 2026 - May 2026",
     stack: ["React", "Vite", "Tailwind", "Supabase"],
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+    image: "/cite-tms-cover.png",
     githubUrl: "https://github.com/gncrlatienza-eng/cite-tms-frontend",
     liveUrl: "https://cite-tms-frontend.vercel.app/",
   },
@@ -122,8 +121,10 @@ export const projects: Project[] = [
     role: "Frontend Developer",
     period: "2025",
     stack: ["React", "Vite", "JavaScript", "Tailwind", "MongoDB"],
-    image:
-      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80",
+    image: "/animomart-cover.png",
+    githubUrl:
+      "https://github.com/bmsj23/final-project-group6-webdevt-frontend",
+    liveUrl: "https://animomart.vercel.app/login",
   },
 ];
 
