@@ -59,7 +59,7 @@ export function HeroSection() {
           </div>
         </Reveal>
 
-        <div className="relative mx-auto flex w-full max-w-[34rem] items-end justify-center self-stretch">
+        <div className="relative mx-auto flex w-full max-w-[34rem] items-center justify-center self-stretch">
           <div
             className="absolute bottom-8 left-1/2 h-[72%] w-[72%] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse,_var(--accent-soft),transparent_70%)] blur-2xl"
             aria-hidden="true"

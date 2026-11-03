@@ -83,8 +83,7 @@ export const projects: Project[] = [
     role: "Full-Stack Developer",
     period: "Mar 2026 - Present",
     stack: ["React", "TypeScript", "Tailwind", "NestJS", "PostgreSQL"],
-    image:
-      "https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=1200&q=80",
+    image: "/lgr-autosupply-cover.png",
   },
   {
     title: "TaskBuddy",
