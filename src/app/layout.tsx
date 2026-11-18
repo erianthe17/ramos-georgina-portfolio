@@ -17,15 +17,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Georgina Ramos | Portfolio",
+  metadataBase: new URL("https://ramos-georgina-portfolio.vercel.app"),
+  title: "Georgina Ramos | Frontend Developer Portfolio",
   description:
-    "Portfolio of Georgina Ramos, a front-end focused developer building polished digital products with TypeScript, React, and modern product design.",
-  keywords: ["frontend developer", "portfolio", "Next.js", "React", "TypeScript"],
+    "Portfolio of Georgina Ramos, a front-end developer and CS senior building accessible, modern web interfaces with TypeScript, React, and Next.js.",
+  keywords: ["frontend developer", "portfolio", "Next.js", "React", "TypeScript", "Tailwind CSS", "Georgina Ramos"],
+  authors: [{ name: "Georgina Ramos" }],
   openGraph: {
-    title: "Georgina Ramos | Portfolio",
+    title: "Georgina Ramos | Frontend Developer Portfolio",
     description:
-      "Front-end focused developer building responsive, user-centered digital experiences.",
+      "Frontend developer building responsive, user-centered digital experiences with React, TypeScript, and modern design.",
+    url: "https://ramos-georgina-portfolio.vercel.app",
+    siteName: "Georgina Ramos Portfolio",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Georgina Ramos | Frontend Developer Portfolio",
+    description:
+      "Frontend developer building responsive, user-centered digital experiences.",
   },
 };
 
@@ -33,10 +43,18 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" data-theme="dark" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`} suppressHydrationWarning>
       <body className="min-h-full">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-full focus:bg-[var(--accent)] focus:px-5 focus:py-2.5 focus:text-sm focus:font-semibold focus:text-[var(--accent-contrast)] focus:shadow-xl focus:outline-none"
+        >
+          Skip to main content
+        </a>
         <ConnectionStatus />
         <div className="relative flex min-h-screen flex-col">
           <Navbar />
-          <main className="flex-1">{children}</main>
+          <main id="main-content" className="flex-1">
+            {children}
+          </main>
           <Footer />
         </div>
       </body>

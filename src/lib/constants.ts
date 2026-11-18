@@ -14,14 +14,36 @@ export const siteConfig = {
   title: "Frontend Engineer Portfolio",
   description:
     "Modern portfolio for Georgina Ramos, showcasing product-minded frontend engineering, product design, and digital experiences.",
-  url: "https://georginaramos.dev",
+  url: "https://ramos-georgina-portfolio.vercel.app",
 };
 
+/* ==========================================================================
+   RESUME FILE CONFIGURATION
+   --------------------------------------------------------------------------
+   PLACE YOUR RESUME PDF HERE:
+   Put your resume PDF into the "public" folder (for example: /public/resume.pdf).
+   If your PDF has a different filename, change the path below:
+   ========================================================================== */
+export const resumeUrl = "/resume.pdf";
+
 export const navItems: NavItem[] = [
-  { label: "About", href: "#about" },
   { label: "Work", href: "#work" },
+  { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
+
+/* ==========================================================================
+   CONTACT FORM CONFIGURATION
+   --------------------------------------------------------------------------
+   To receive submissions directly to your email without managing a server,
+   you can use Web3Forms (100% free):
+   1. Visit https://web3forms.com and enter your email (georginaramos0317@gmail.com)
+   2. Paste the access key you receive into `web3FormsAccessKey` below or in
+      your .env.local file as `NEXT_PUBLIC_WEB3FORMS_KEY`.
+   ========================================================================== */
+export const contactConfig = {
+  web3FormsAccessKey: process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "",
+};
 
 export const profile: Profile = {
   name: "Georgina Ramos",

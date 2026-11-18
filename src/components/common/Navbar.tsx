@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, FileText } from "lucide-react";
 import { ThemeToggle } from "@/components/common/ThemeToggle";
-import { navItems } from "@/lib/constants";
+import { navItems, resumeUrl } from "@/lib/constants";
 
 export function Navbar() {
   return (
@@ -25,6 +25,20 @@ export function Navbar() {
         </nav>
 
         <div className="ml-auto flex items-center gap-2 sm:gap-3 md:ml-0">
+          {/* ================================================================== */}
+          {/* RESUME LINK: Place your resume PDF at: /public/resume.pdf          */}
+          {/* Configured via resumeUrl in @/lib/constants.ts                      */}
+          {/* ================================================================== */}
+          <a
+            href={resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border)] bg-[var(--card)] px-3 py-2 text-[10px] font-semibold tracking-[0.12em] text-[var(--foreground)] uppercase transition hover:border-[var(--accent)]/60 hover:text-[var(--accent-strong)] sm:gap-2 sm:px-4 sm:text-xs sm:tracking-[0.16em]"
+          >
+            <FileText className="h-3.5 w-3.5" />
+            Resume
+          </a>
+
           <Link
             href="#contact"
             className="inline-flex items-center gap-1.5 rounded-full border border-[var(--accent)]/50 bg-[var(--accent-soft)] px-3 py-2 text-[10px] font-semibold tracking-[0.12em] text-[var(--accent-strong)] uppercase transition hover:brightness-110 sm:gap-2 sm:px-4 sm:text-xs sm:tracking-[0.16em]"

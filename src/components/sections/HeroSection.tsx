@@ -1,8 +1,26 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Briefcase, Globe } from "lucide-react";
+import { ArrowRight, FileText, Mail } from "lucide-react";
 import { Reveal } from "@/components/common/Reveal";
-import { profile, socialLinks } from "@/lib/constants";
+import { profile, resumeUrl, socialLinks } from "@/lib/constants";
+
+function GitHubIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+    </svg>
+  );
+}
+
+function LinkedInIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+      <rect x="2" y="9" width="4" height="12" />
+      <circle cx="4" cy="4" r="2" />
+    </svg>
+  );
+}
 
 export function HeroSection() {
   return (
@@ -11,7 +29,11 @@ export function HeroSection() {
 
       <div className="relative z-10 mx-auto grid min-h-[34rem] max-w-6xl items-center gap-8 px-4 sm:px-6 md:grid-cols-[1.1fr_0.9fr] lg:px-8">
         <Reveal initialVisible className="relative z-10 max-w-2xl py-10">
-          <h1 className="mt-5 text-5xl font-semibold leading-[1.08] tracking-tight text-[var(--foreground)] sm:text-6xl lg:text-7xl">
+          <p className="text-xs font-semibold tracking-[0.24em] text-[var(--accent-strong)] uppercase">
+            Frontend Developer &bull; UI/UX
+          </p>
+
+          <h1 className="mt-4 text-5xl font-semibold leading-[1.08] tracking-tight text-[var(--foreground)] sm:text-6xl lg:text-7xl">
             Hello,
             <br />
             I am <span className="text-[var(--accent-strong)]">{profile.name}</span>
@@ -30,6 +52,21 @@ export function HeroSection() {
               Let&apos;s get in touch
               <ArrowRight className="h-4 w-4" />
             </Link>
+
+            {/* ================================================================== */}
+            {/* RESUME BUTTON: Place your resume PDF at: /public/resume.pdf         */}
+            {/* Configured via resumeUrl in @/lib/constants.ts                      */}
+            {/* ================================================================== */}
+            <a
+              href={resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--card)] px-5 py-3 text-sm font-semibold text-[var(--foreground)] transition hover:border-[var(--accent)]/70 hover:text-[var(--accent-strong)]"
+            >
+              <FileText className="h-4 w-4" />
+              View Resume
+            </a>
+
             <Link
               href="#work"
               className="text-sm font-medium text-[var(--muted)] transition hover:text-[var(--accent-strong)]"
@@ -38,9 +75,14 @@ export function HeroSection() {
             </Link>
           </div>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            {socialLinks.slice(0, 2).map((link) => {
-              const Icon = link.label === "GitHub" ? Briefcase : Globe;
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            {socialLinks.map((link) => {
+              const Icon =
+                link.label === "GitHub"
+                  ? GitHubIcon
+                  : link.label === "LinkedIn"
+                  ? LinkedInIcon
+                  : Mail;
 
               return (
                 <a
