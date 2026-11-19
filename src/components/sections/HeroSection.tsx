@@ -25,8 +25,6 @@ function LinkedInIcon({ className }: { className?: string }) {
 export function HeroSection() {
   return (
     <section className="hero-fade-in-up relative isolate overflow-hidden pb-12 pt-12 sm:pt-16 lg:pt-20">
-      <div className="hero-particles absolute inset-0" aria-hidden="true" />
-
       <div className="relative z-10 mx-auto grid min-h-[34rem] max-w-6xl items-center gap-8 px-4 sm:px-6 md:grid-cols-[1.1fr_0.9fr] lg:px-8">
         <Reveal initialVisible className="relative z-10 max-w-2xl py-10">
           <p className="text-xs font-semibold tracking-[0.24em] text-[var(--accent-strong)] uppercase">

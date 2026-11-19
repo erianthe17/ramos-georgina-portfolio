@@ -27,7 +27,7 @@ export const siteConfig = {
 export const resumeUrl = "/resume.pdf";
 
 export const navItems: NavItem[] = [
-  { label: "Work", href: "#work" },
+  { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
 

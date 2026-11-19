@@ -15,7 +15,7 @@ function GitHubIcon({ className }: { className?: string }) {
 
 export function ProjectGrid() {
   return (
-    <section id="work" className="project-section py-20">
+    <section id="projects" className="project-section py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <Reveal className="mb-10 flex items-end justify-between gap-4">
           <div>
