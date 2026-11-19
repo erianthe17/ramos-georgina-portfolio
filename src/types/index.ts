@@ -25,7 +25,7 @@ export interface Project {
   summary: string;
   description: string;
   role: string;
-  period: string;
+  period?: string;
   stack: string[];
   image: string;
   githubUrl?: string;

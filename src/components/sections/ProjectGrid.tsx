@@ -53,10 +53,10 @@ export function ProjectGrid() {
               </div>
 
               <div className="flex flex-1 flex-col p-6">
-                <div className="mb-3 flex items-center justify-between gap-3">
-                  <p className="text-[11px] font-medium tracking-[0.18em] text-[var(--accent-strong)] uppercase">
-                    {project.period}
-                  </p>
+                <div className="mb-4 flex items-center justify-between gap-3">
+                  <span className="text-[11px] font-semibold tracking-[0.16em] text-[var(--accent-strong)] uppercase">
+                    {project.role}
+                  </span>
                   <div className="flex items-center gap-2">
                     {project.githubUrl && (
                       <a
@@ -90,8 +90,7 @@ export function ProjectGrid() {
                   </div>
                 </div>
 
-                <p className="text-sm text-[var(--muted)]">{project.role}</p>
-                <h3 className="mt-2 text-2xl font-semibold text-[var(--foreground)]">
+                <h3 className="text-2xl font-semibold text-[var(--foreground)]">
                   {project.title}
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-[var(--muted)]">

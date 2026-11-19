@@ -28,7 +28,6 @@ export const resumeUrl = "/resume.pdf";
 
 export const navItems: NavItem[] = [
   { label: "Work", href: "#work" },
-  { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -103,7 +102,6 @@ export const projects: Project[] = [
     description:
       "An inventory management system for tracking products, monitoring stock levels, and organizing day-to-day auto-supply operations.",
     role: "Full-Stack Developer",
-    period: "Mar 2026 - Present",
     stack: ["React", "TypeScript", "Tailwind", "NestJS", "PostgreSQL"],
     image: "/lgr-autosupply-cover.png",
   },
@@ -114,7 +112,6 @@ export const projects: Project[] = [
     description:
       "A home services marketplace where homeowners can find service providers, post jobs, and review applications.",
     role: "Frontend Developer",
-    period: "Jul 2026 - Oct 2026",
     stack: ["React Native", "Expo", "TypeScript", "Supabase", "Next.js"],
     image: "/taskbuddy-cover.png",
     githubUrl: "https://github.com/erianthe17/taskbuddy",
@@ -127,7 +124,6 @@ export const projects: Project[] = [
     description:
       "A thesis management system for submitting academic work, reviewing thesis documents, and managing access requests.",
     role: "Frontend Developer",
-    period: "Feb 2026 - May 2026",
     stack: ["React", "Vite", "Tailwind", "Supabase"],
     image: "/cite-tms-cover.png",
     githubUrl: "https://github.com/gncrlatienza-eng/cite-tms-frontend",
@@ -140,7 +136,6 @@ export const projects: Project[] = [
     description:
       "A campus marketplace for browsing products, managing wishlists, and completing purchases.",
     role: "Frontend Developer",
-    period: "2025",
     stack: ["React", "Vite", "JavaScript", "Tailwind", "MongoDB"],
     image: "/animomart-cover.png",
     githubUrl:
